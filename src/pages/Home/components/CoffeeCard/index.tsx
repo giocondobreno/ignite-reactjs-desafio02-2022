@@ -50,6 +50,7 @@ export function CoffeeCard({ coffee }: CoffeeCardProps) {
     addCoffeeToCart(coffeeToAdd)
   }
   const formatPrice = formatMoney(coffee.price)
+
   return (
     <CoffeeCardContainer>
       <Image src={`/coffees/${coffee.photo}`} alt="" />

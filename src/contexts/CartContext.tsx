@@ -39,11 +39,11 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     return total + cartItem.price * cartItem.quantity
   }, 0)
   function addCoffeeToCart(coffe: CartItem) {
-    const coffeAlreadyExistsInCart = cartItems.findIndex(
-      (cartItem) => cartItem.id === coffe.id,
-    )
-
     const newCart = produce(cartItems, (draft) => {
+      const coffeAlreadyExistsInCart = cartItems.findIndex(
+        (cartItem) => cartItem.id === coffe.id,
+      )
+
       if (coffeAlreadyExistsInCart === -1) {
         draft.push(coffe)
       } else {
